@@ -11,3 +11,11 @@ db.collection('animals').add(newAnimal)
 
 }
 
+export async function getAllAnimals(req, res){
+ const collection = await db.collection('animals').get()
+ .catch(err => res.status(500).send(err))
+// const animalList = collection.doc.map(animal => animal.data())
+const animalList = collection.doc.map(animal => ({...animal.data(), id: animal.id}))
+res.send(animalList)
+}
+

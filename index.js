@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 
-import {addNewAnimal} from './src/animals.js'
+import {addNewAnimal, getAllAnimals} from './src/animals.js'
 
 const PORT = 3002
 
